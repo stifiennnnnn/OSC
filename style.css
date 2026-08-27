@@ -5,11 +5,50 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* Base Image Setup */
-img {
-    max-width: 100%;
+.hero-images {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+
+.BreakfastPic {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
     height: auto;
     display: block;
+}
+
+.bg {
+    position: absolute; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-77%, -50%); 
+    width: 1500px; 
+    height: auto;
+    z-index: -5; 
+    pointer-events: none;
+}
+
+.Rec1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-77%, -20%);
+    z-index: -4;
+}
+
+.Rec2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1700px;
+    transform: translate(-75%, 22%);
+    z-index: -4;
 }
 
 /* Header & Nav Fix */
