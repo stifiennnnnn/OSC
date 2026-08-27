@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Base Image Setup */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Header & Nav Fix */
+.header {
+    background-color: #ff914d;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: relative; /* Menjadi acuan posisi absolut menu navigasi */
+}
+
+.navli {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+    
+    /* Mengatur menu agar berada tepat di tengah header (Desktop) */
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navli a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 5px 12px;
+    transition: all 0.3s ease;
+}
+
+.navli a.active {
+    color: #ff7017;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 19.5px;
+}
+
+.hambuger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px; 
+}
+
+/* Hero Section */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px 5%;
+    font-weight: 800;
+    color: #ff9500;
+    font-size: 30px;
+    line-height: 1.05;
+}
+
+.beda {
+    color: #ff7017;
+}
+
+/* Section Formatting */
+.about, .research {
+    padding: 40px 5%;
+}
+
+.about h2{
+    text-align: right;
+}
+
+/* Research Section */
+.research {
+    padding: 40px 5%;
+}
+
+.research h2 {
+    color: #ff7017;
+    margin-bottom: 15px;
+}
+
+.research h3 {
+    color: #ff9500;
+    margin-bottom: 10px;
+}
+
+/* RAHASIA SEJAJAR: PAKE GRID 1FR 1FR */
+.research-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Membagi 2 kolom SAMA BESAR (50% : 50%) */
+    align-items: center;            /* Gambar & teks sejajar vertikal di tengah */
+    gap: 40px;                      /* Jarak bersih antara teks & gambar */
+    margin-top: 40px;
+}
+
+.research-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;            /* Biar gambarnya proporsional & ga ketarik */
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsive Styles for Mobile */
+@media (max-width: 768px) {
+    .hambuger {
+        display: block;
+    }
+
+    .navli {
+        display: none; /* Disembunyikan dulu, toggle via JS */
+        flex-direction: column;
+        
+        /* Reset posisi tengah desktop untuk tampilan dropdown mobile */
+        position: absolute;
+        top: 100%;
+        left: 0;
+        transform: none;
+        width: 100%;
+        background-color: #ff914d;
+        padding: 20px 0;
+    }
+
+    .navli.show {
+        display: flex; /* Class ini ditambahkan saat hamburger diklik */
+    }
+
+    .hero {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .research-item {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
