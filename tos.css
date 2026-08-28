@@ -1,84 +1,184 @@
 * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  min-height: 3000px;
-  width: 100%;
-  background-color: #ffffff;
-  overflow: scroll;
-  overflow-x: hidden;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden; /* Sekarang aman dipakai karena flexbox di body dihapus */
 }
 
+/* --- HEADER & NAVIGASI --- */
+.header {
+    background-color: #ff914d;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+    left: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    width: 100%;
+    position: relative;
+}
+
+.logo {
+    height: 40px; /* Mencegah logo menjadi raksasa */
+    width: auto;
+}
+
+.navli {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navli a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 5px 12px;
+    transition: all 0.3s ease;
+}
+
+.navli a.active {
+    color: #ff7017;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 19.5px;
+}
+
+.hambuger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px; 
+}
+
+/* --- KONTEN HALAMAN UTAMA --- */
 .isi {
-  position: relative;
+    width: 100%;
+    position: relative;
 }
 
+/* Gambar Background ToS */
 .Pic {
     display: block;
-    width: 1380px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 140px;
+    width: 100%;
+    max-width: 1380px; /* Menjaga agar tidak memicu scroll menyamping */
+    margin: -10px auto 0 auto;    /* Memastikan gambar selalu di tengah */
 }
 
+/* Judul "Terms of Service" di atas gambar */
 .tos {
-   text-align: center;
-   font-family: 'Poppins', sans-serif;
-   font-weight: 600;
-   font-size: 50px;
-   color: #000000;
-   margin-top: -150px;
-   color: white;
-   text-shadow: 0px 0px 10px black;
+    text-align: center;
+    font-weight: 600;
+    font-size: clamp(30px, 5vw, 50px); /* Ukuran otomatis mengecil di layar HP */
+    color: white;
+    text-shadow: 0px 0px 10px black;
+    margin-top: -12%; /* Pakai % agar posisinya tetap stabil meski gambar mengecil */
 }
 
+/* --- TEKS INFORMASI (TOS) --- */
 .PostOn {
-  margin-left: 150px;
-  margin-right: 150px;
-  position: relative;
-  text-align: justify;
-  margin-top: 100px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 23px;
-  font-weight: 600;
-  color: #A6A6A6;
+    position: relative;
+    text-align: left;
+    margin: 15% auto 0 auto; /* Menjaga jarak dinamis dari gambar */
+    padding: 0 5%;
+    max-width: 1200px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #A6A6A6;
 }
 
 .txt {
-  position: relative;
-  text-align: justify;
-  margin-left: 150px;
-  margin-right: 150px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 15px;
+    position: relative;
+    text-align: justify;
+    padding: 0 5% 50px 5%; /* Mengganti margin 150px dengan margin persentase biar rapi di HP */
+    max-width: 1200px;     /* Teks tidak melebar tak terhingga di layar monitor besar */
+    margin: 0 auto;        /* Mengunci posisi teks di tengah layar */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333333;
 }
 
+/* --- POIN DAN DAFTAR LIST --- */
 .Point1 {
-  font-weight: 500;
-  font-size: 25px;
+    font-weight: 600;
+    font-size: 22px;
+    color: #000000;
+    margin-top: 30px;
+}
+
+.Point2 {
+    font-weight: 400;
 }
 
 .divider {
-  border: none;
-  border-top: 3px solid #e0e0e0; /* Warna abu-abu tipis */
-  margin-top: 12px;
-  margin-bottom: 12px;
-  width: 100%;
+    border: none;
+    border-top: 2px solid #e0e0e0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .list {
-  margin-left: 15px;
+    margin-left: 24px;
+}
+
+.list li {
+    margin-bottom: 12px;
 }
 
 .list2 {
-  padding-left: 40px;
+    padding-left: 24px;
+    list-style-type: disc;
+}
+
+.list2 li {
+    margin-bottom: 8px;
+}
+
+/* --- TAMPILAN RESPONSIVE UNTUK HP --- */
+@media (max-width: 768px) {
+    .navli {
+        display: none; 
+    }
+    
+    .hambuger {
+        display: block; 
+    }
+
+    .PostOn {
+        margin-top: 25%; /* Memberi jarak ekstra agar judul tidak numpuk teks saat di HP */
+        font-size: 16px;
+    }
+
+    .txt {
+        font-size: 15px;
+    }
+
+    .Point1 {
+        font-size: 19px;
+    }
 }
