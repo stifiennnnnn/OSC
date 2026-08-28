@@ -34,8 +34,9 @@ nav {
 }
 
 .logo {
-    height: 40px; /* Mencegah logo menjadi raksasa */
-    width: auto;
+    max-width: 65%;
+    height: auto;
+    margin: 0px 10px 0px 30px;
 }
 
 .navli {
