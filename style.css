@@ -13,7 +13,6 @@ body {
 
 /* Base Image Setup */
 img {
-    max-width: 100%;
     height: auto;
     display: block;
 }
@@ -131,19 +130,18 @@ main {
 
 .Rec1 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    left: -85px;
+    transform: translate(-50%, 20%);
     z-index: -4;
+    width: 1350px;
 }
 
 .Rec2 {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    transform: translate(-50%, -50%);
-    z-index: -4;
+    left: 700px;
+    width: 1600px;
+    transform: translate(-100%, 95%);
+    z-index: -3;
 }
 
 .beda {
@@ -170,13 +168,26 @@ main {
     margin-top: 50px;
 }
 
+.item-about {
+    text-align: right;
+    color: #ff7017;
+    font-size: 40px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
 /* Judul poin riset di tengah & terpisah dari teks */
 .item-title {
     text-align: center;
     color: #ff7017;
-    font-size: 24px;
+    font-size: 40px;
     margin-bottom: 25px;
     width: 100%;
+}
+
+p {
+    font-size: 23px;
+    text-align: justify;
 }
 
 /* Layout Teks & Gambar (50% : 50%) */
@@ -210,6 +221,14 @@ main {
     display: flex;
     justify-content: center;
     padding: 20px 0;
+}
+
+.divider {
+    border: none;
+    border-top: 3px solid #e0e0e0;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 /* Responsive Styles for Mobile */
