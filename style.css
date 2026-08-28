@@ -5,59 +5,33 @@
     font-family: "Poppins", sans-serif;
 }
 
-.hero-images {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    max-width: 500px;
+/* PERBAIKAN 1: Pindahkan overflow-x ke body saja (bukan html) agar sticky header tidak rusak */
+body {
+    overflow-x: hidden;
     width: 100%;
 }
 
-
-.BreakfastPic {
-    position: relative;
-    z-index: 2; 
-    width: 100%;
+/* Base Image Setup */
+img {
+    max-width: 100%;
     height: auto;
     display: block;
 }
 
-.bg {
-    position: absolute; 
-    top: 50%;
-    left: 50%;
-    transform: translate(-77%, -50%); 
-    width: 1500px; 
-    height: auto;
-    z-index: -5; 
-    pointer-events: none;
-}
-
-.Rec1 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-77%, -20%);
-    z-index: -4;
-}
-
-.Rec2 {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 1700px;
-    transform: translate(-75%, 22%);
-    z-index: -4;
-}
-
-/* Header & Nav Fix */
+/* PERBAIKAN 2: Header Sticky */
 .header {
     background-color: #ff914d;
+    position: -webkit-sticky; /* Dukungan untuk browser Safari */
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 9999; /* Dipastikan paling atas dari semua elemen */
     width: 100%;
+}
+
+.logo {
+    max-width: 65%;
+    height: auto;
+    margin: 0px 10px 0px 30px;
 }
 
 nav {
@@ -65,7 +39,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 15px 5%;
-    position: relative; /* Menjadi acuan posisi absolut menu navigasi */
+    position: relative;
 }
 
 .navli {
@@ -73,8 +47,6 @@ nav {
     list-style: none;
     gap: 15px;
     align-items: center;
-    
-    /* Mengatur menu agar berada tepat di tengah header (Desktop) */
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -107,16 +79,71 @@ nav {
     padding: 5px; 
 }
 
+/* Main tanpa margin luar agar background hero full width */
+main {
+    margin: 0;
+    width: 100%;
+}
+
 /* Hero Section */
 .hero {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 50px 5%;
+    padding: 60px 8%;
     font-weight: 800;
     color: #ff9500;
     font-size: 30px;
     line-height: 1.05;
+    width: 100%;
+    min-height: 450px;
+}
+
+/* Background mepet ujung kiri-kanan layar */
+.bg {
+    position: absolute; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -5; 
+    pointer-events: none;
+}
+
+.hero-images {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 480px;
+    width: 100%;
+}
+
+.BreakfastPic {
+    position: relative;
+    z-index: 2; 
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.Rec1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -4;
+}
+
+.Rec2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%);
+    z-index: -4;
 }
 
 .beda {
@@ -125,46 +152,64 @@ nav {
 
 /* Section Formatting */
 .about, .research {
-    padding: 40px 5%;
+    padding: 60px 8%;
 }
 
-.about h2{
+.about h2 {
     text-align: right;
+    color: #ff7017;
 }
 
 /* Research Section */
-.research {
-    padding: 40px 5%;
-}
-
-.research h2 {
+.research > h2 {
     color: #ff7017;
     margin-bottom: 15px;
 }
 
-.research h3 {
-    color: #ff9500;
-    margin-bottom: 10px;
-}
-
-/* RAHASIA SEJAJAR: PAKE GRID 1FR 1FR */
 .research-item {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Membagi 2 kolom SAMA BESAR (50% : 50%) */
-    align-items: center;            /* Gambar & teks sejajar vertikal di tengah */
-    gap: 40px;                      /* Jarak bersih antara teks & gambar */
-    margin-top: 40px;
+    margin-top: 50px;
 }
 
-.research-item img {
+/* Judul poin riset di tengah & terpisah dari teks */
+.item-title {
+    text-align: center;
+    color: #ff7017;
+    font-size: 24px;
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+/* Layout Teks & Gambar (50% : 50%) */
+.item-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 40px;
+}
+
+.item-content img {
     width: 100%;
     height: auto;
-    object-fit: contain;            /* Biar gambarnya proporsional & ga ketarik */
+    object-fit: contain;
+}
+
+/* Khusus Item 2: Gambar di Kiri, Teks di Kanan */
+.item-content.reverse {
+    grid-template-areas: "img text";
+}
+
+.item-content.reverse .research-text {
+    grid-area: text;
+}
+
+.item-content.reverse img {
+    grid-area: img;
 }
 
 .footer {
     display: flex;
     justify-content: center;
+    padding: 20px 0;
 }
 
 /* Responsive Styles for Mobile */
@@ -174,10 +219,8 @@ nav {
     }
 
     .navli {
-        display: none; /* Disembunyikan dulu, toggle via JS */
+        display: none;
         flex-direction: column;
-        
-        /* Reset posisi tengah desktop untuk tampilan dropdown mobile */
         position: absolute;
         top: 100%;
         left: 0;
@@ -188,18 +231,26 @@ nav {
     }
 
     .navli.show {
-        display: flex; /* Class ini ditambahkan saat hamburger diklik */
+        display: flex;
     }
 
     .hero {
         flex-direction: column;
         text-align: center;
         gap: 30px;
+        padding: 40px 5%;
     }
 
-    .research-item {
-        flex-direction: column;
+    .item-content,
+    .item-content.reverse {
+        grid-template-columns: 1fr;
+        grid-template-areas: none;
         text-align: center;
         gap: 20px;
+    }
+
+    .item-content.reverse .research-text,
+    .item-content.reverse img {
+        grid-area: auto;
     }
 }
