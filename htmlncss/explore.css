@@ -97,7 +97,7 @@ nav {
     padding: 0px 10px;
 }
 
-.profileredi, .notification {
+.profileredi, .notification, .menu-button {
     background: transparent;  /* Menghilangkan warna latar belakang */
     border: none;             /* Menghilangkan garis tepi */
     padding: 0;               /* Menghilangkan jarak dalam bawaan */
@@ -141,9 +141,19 @@ nav {
     grid-template-columns: repeat(5, 1fr); /* Membuat 5 kolom sama lebar */
     gap: 20px;                             /* Jarak antar toko */
     align-items: start;
+    justify-items: center;
     padding-top: 15px;
 }
 
 .selection p {
     color: #ff7017;
+    font-size: 18px;
+}
+
+.canteen-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
 }
