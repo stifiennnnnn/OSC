@@ -1,33 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Frequently Asked Questions</title>
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="stylesheet" href="faq.css">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header class="header">
-            <nav>
-                <div>
-                    <img class="logo" src="assets/LOGO (1) 1.png" alt="logo">
-                </div>
-                <div>
-                    <button class="hambuger">☰</button>
-                    <ul class="navli">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="faq.html" class="active">FAQ</a></li>
-                        <li><a href="tos.html">Terms of Services</a></li>
-                    </ul>
-                    <a href="register.html"><button class="singup">Sign Up!</button></a>
-                </div>
-            </nav>
-        </header>
+<?php include '../../includes/head.php'; ?>
+<link rel="stylesheet" href="../../assets/css/faq.css">
 
-        <main class="faq-container">
-        
+<body>
+    <?php include '../../includes/header.php'; ?>
+    <main class="faq-container">
         <div class="faq-left">
             <h1 class="faq-title">Frequently <br> Asked Questions</h1>
             <div class="illustration-box"></div> <!-- Kotak border oranye -->
@@ -55,6 +33,6 @@
                 <p>You can track your order status through AD-MEALS and receive a notification when it is ready.</p>
             </div>
         </div>
-
     </main>
-    </body>
+    <?php include '../../includes/footer.php'; ?>
+</body>

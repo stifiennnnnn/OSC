@@ -1,0 +1,56 @@
+/* ========================================
+   Header & Navigation
+======================================== */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: var(--white);
+  box-shadow: 0 0.125rem 0.625rem rgb(0 0 0 / 5%);
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  width: min(100% - (var(--gutter) * 2), var(--container-width));
+  min-height: clamp(4rem, 8vw, 4.5rem);
+  margin-inline: auto;
+}
+
+.logo img {
+  width: auto;
+  padding: 0.5em;
+  height: clamp(4rem, 8vw, 5.5rem);
+  pointer-events: none;
+  user-select: none; 
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+  list-style: none;
+}
+
+nav ul li a {
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+nav ul li a:hover {
+  color: var(--orange);
+}
+
+nav ul li a.active {
+  color: var(--orange);
+  cursor: default;
+}
+
+nav .btn {
+  font-size: 1.2em;
+  padding: 0.75rem clamp(3rem, 4.2vw, 3.5rem);
+  border-radius: var(--radius-sm);
+}
