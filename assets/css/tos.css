@@ -6,13 +6,15 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap');
 
+/*
 body {
     width: 100%;
     min-height: 100vh;
     background-color: #ffffff;
     font-family: 'Poppins', sans-serif;
-    overflow-x: hidden; /* Sekarang aman dipakai karena flexbox di body dihapus */
+    overflow-x: hidden; /* Sekarang aman dipakai karena flexbox di body dihapus
 }
+*/
 
 /* --- HEADER & NAVIGASI --- */
 /*
@@ -89,16 +91,17 @@ nav {
 */
 
 /* --- KONTEN HALAMAN UTAMA --- */
+/*
 .isi {
     width: 100%;
     position: relative;
 }
+*/
 
 /* Gambar Background ToS */
 .Pic {
     display: block;
-    width: 100%;
-    max-width: 1380px; /* Menjaga agar tidak memicu scroll menyamping */
+    width: 100vw;
     margin: -10px auto 0 auto;    /* Memastikan gambar selalu di tengah */
 }
 
@@ -107,8 +110,8 @@ nav {
     text-align: center;
     font-weight: 600;
     font-size: clamp(30px, 5vw, 50px); /* Ukuran otomatis mengecil di layar HP */
-    color: white;
-    text-shadow: 0px 0px 10px black;
+    color: var(--white);
+    text-shadow: 0px 0px 10px var(--text);
     margin-top: -12%; /* Pakai % agar posisinya tetap stabil meski gambar mengecil */
 }
 
@@ -116,12 +119,13 @@ nav {
 .PostOn {
     position: relative;
     text-align: left;
-    margin: 15% auto 0 auto; /* Menjaga jarak dinamis dari gambar */
+    margin: 12% auto 0 auto; /* Menjaga jarak dinamis dari gambar */
     padding: 0 5%;
     max-width: 1200px;
     font-size: 18px;
     font-weight: 600;
-    color: #A6A6A6;
+    color: var(--muted);
+    opacity: 0.7;
 }
 
 .txt {
@@ -132,14 +136,14 @@ nav {
     margin: 0 auto;        /* Mengunci posisi teks di tengah layar */
     font-size: 16px;
     line-height: 1.6;
-    color: #333333;
+    color: var(--text);
 }
 
 /* --- POIN DAN DAFTAR LIST --- */
 .Point1 {
     font-weight: 600;
     font-size: 22px;
-    color: #000000;
+    color: var(--text);
     margin-top: 30px;
 }
 

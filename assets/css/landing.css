@@ -346,10 +346,6 @@
 ======================================== */
 
 @media (max-width: 800px) {
-  nav ul {
-    display: none;
-  }
-
   .hero .container,
   .about .container,
   .contact .container,

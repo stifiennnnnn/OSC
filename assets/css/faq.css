@@ -1,157 +1,82 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #ffffff;
-    overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  background-color: #ffffff;
+  overflow-x: hidden;
 }
-
-/* ==========================================
-   HEADER & NAV (100% KODE ASLI DARI KAMU)
-   ==========================================
-.header {
-    background-color: #ff914d;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
-}
-
-.logo {
-    max-width: 65%;
-    height: auto;
-    margin: 0px 10px 0px 30px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    position: relative;
-}
-
-.navli {
-    margin-top: 10px;
-    display: flex;
-    list-style: none;
-    gap: 15px;
-    align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-.navli a {
-    text-decoration: none;
-    color: white;
-    font-weight: 400;
-    font-size: 18px;
-    white-space: nowrap;
-    padding: 5px 12px;
-    transition: all 0.3s ease;
-}
-
-.navli a.active {
-    color: #ff7017;
-    background-color: white;
-    border: 1px solid white;
-    border-radius: 19.5px;
-}
-
-.singup {
-    background-color: #ffffff;
-    color: #ff7017;
-    font-weight: bold;
-    font-size: 25px;
-    border: none;
-    border-radius: 30px;
-    padding:    10px 40px 10px 40px;
-}
-
-.hambuger {
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1.8rem;
-    cursor: pointer;
-    padding: 5px; 
-}
-*/
 
 .faq-container {
-    display: flex;
-    justify-content: space-between;
-    gap: 40px;
-    max-width: 1200px; 
-    margin: 50px auto;
-    padding: 0 5%;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  max-width: 1200px; 
+  margin: 50px auto;
+  padding: 0 5%;
 }
 
 .faq-left {
-    flex: 1;
+  flex: 1;
 }
 
 .faq-title {
-    line-height: 1.1;
-    color: #FF914D;
-    font-weight: 600;
-    font-size: 48px;
-    margin-bottom: 25px;
+  line-height: 1.1;
+  color: var(--orange);
+  font-weight: 600;
+  font-size: 48px;
+  margin-bottom: 25px;
 }
 
 .illustration-box {
-    border: 2px solid #FF914D;
-    border-radius: 16px;
-    height: 230px;
-    width: 95%;
-    margin-top: 100px;
+  border: 2px solid var(--orange);
+  border-radius: 16px;
+  height: 230px;
+  width: 95%;
+  margin-top: 100px;
 }
 
 .faq-right {
-    flex: 1.2;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+  flex: 1.2;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .faq-card {
-    background-color: #ff8e43;
-    color: #ffffff;
-    padding: 18px 22px;
-    border-radius: 16px;
+  background-color: var(--orange);
+  color: #ffffff;
+  padding: 18px 22px;
+  border-radius: 16px;
 }
 
 .faq-card h3 {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
 
 .faq-card p {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.5;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 /* Penyesuaian untuk HP */
 @media (max-width: 768px) {
-    .faq-container {
-        flex-direction: column;
-        margin: 30px auto;
-    }
+  .faq-container {
+    flex-direction: column;
+    margin: 30px auto;
+  }
 
-    .navli {
-        display: none;
-    }
+  .navli {
+    display: none;
+  }
 
-    .hambuger {
-        display: block;
-    }
+  .hambuger {
+    display: block;
+  }
 }

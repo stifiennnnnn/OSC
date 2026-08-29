@@ -1,126 +1,202 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+/* ========================================
+  Login & Register Page
+======================================== */
+
+.login-page {
+  min-height: 85vh;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background: var(--white);
 }
 
-body {
-    overflow-x: hidden;
-    width: 100%;
+.left-panel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  padding: clamp(1.5rem, 3vh, 2rem) 0;
 }
 
-/* Header Sticky */
-/*
-.header {
-    background-color: #ff914d;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 9999;
-    width: 100%;
-}
-*/
-
-/* CSS FORM PERSIS SAMA SEPERTI KODE AWAL KAMU */
-.form {
-    max-width: 35%;
-    margin: 50px;
-    padding: 30px;
-    border-radius: 33px;
-    border: 2px solid #ff7017;
+.right-panel {
+  background: var(--orange);
 }
 
-.form h1 {
-    font-weight: 600;
-    color: #ff7017;
+.login-card {
+  width: clamp(18rem, 50vw, 30rem);
 }
 
-.form label {
-    font-weight: 500;
-    color: #ff7017;
+.heading {
+  margin: 0;
+  margin-bottom: clamp(0.8rem, 1.5vh, 0.75rem);
+  text-align: center;
+  font-size: clamp(2.4rem, 8vw, 2.7rem);
+  line-height: 1.25;
+  font-weight: 500;
+  letter-spacing: -0.02em;
 }
 
-.form input {
-    gap: 5px;
-    padding: 10px 5px 10px 15px;
-    width: 400px;
-    border: 2px solid #ff7017;
-    border-radius: 50px;
+.field {
+  margin-bottom: clamp(0.8rem, 1.5vh, 1.1rem);
 }
 
-.form button {
-    display: block;        
-    margin: 15px auto;     
-    color: #ff7017;
-    font-weight: 500;
-    font-size: 20px;
-    padding: 5px 20px;     
-    background-color: white;
-    border: 2px solid #ff7017;
-    border-radius: 50px;
-    cursor: pointer;
+.field label {
+  display: block;
+  margin: 0 0 clamp(0.35rem, 0.7vh, 0.5rem) clamp(0.6rem, 0.8vw, 0.75rem);
+  color: var(--text);
+  line-height: 1;
+  font-weight: 500;
 }
 
-.form p, a {
-    color: #ff7017;
+.input-wrap {
+  position: relative;
 }
 
-/* POSISI GAMBAR DI KANAN DAN LEBIH BESAR */
-.gambars {
-    position: absolute;
-    right: 5%;           /* Lebih menggeser ke kanan untuk memberi ruang */
-    top: 80%;            /* Menurunkan posisi vertikal gambar */
-    transform: translateY(-50%);
-    pointer-events: none;
+.input {
+  width: 100%;
+  height: clamp(2.75rem, 5vh, 3.25rem);
+  padding: 0 clamp(2.5rem, 3vw, 3rem);
+  border: 1px solid var(--border, #dedede);
+  border-radius: var(--radius-sm);
+  outline: none;
+  background: var(--white);
+  color: var(--text);
+  font: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
 
-.gambars img {
-    max-width: 580px;    /* Memperbesar ukuran gambar */
-    width: 100%;
-    height: auto;
-    display: block;
+.input::placeholder {
+  color: #a5a5a5;
+  opacity: 1;
 }
 
-/*
-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 5%;
-    position: relative;
-    width: 100%;
+.input:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 0.2rem rgb(255 112 23 / 12%);
 }
 
-.logo-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.input-icon {
+  position: absolute;
+  left: clamp(0.7rem, 1vw, 0.9rem);
+  top: 50%;
+  width: clamp(0.85rem, 1vw, 1rem);
+  height: clamp(0.85rem, 1vw, 1rem);
+  transform: translateY(-50%);
+  color: var(--orange);
+  pointer-events: none;
 }
 
-.logo {
-    max-width: 130px;
-    height: auto;
-    display: block;
+.password-toggle {
+  position: absolute;
+  right: clamp(0.55rem, 0.8vw, 0.75rem);
+  top: 50%;
+  width: clamp(0.9rem, 1vw, 1.05rem);
+  height: clamp(0.9rem, 1vw, 1.05rem);
+  padding: 0;
+  border: 0;
+  transform: translateY(-50%);
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
 }
 
-.btn-container {
-    position: absolute;
-    left: 5%;
-    top: 50%;
-    transform: translateY(-50%);
+.password-toggle svg,
+.input-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
-.hambuger {
-    background: none;
-    border: none;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
+.forgot {
+  display: block;
+  margin: clamp(0.35rem, 0.7vh, 0.5rem) 0 clamp(0.9rem, 1.8vh, 1.2rem);
+  text-align: right;
+  color: var(--orange);
+  line-height: 1;
 }
 
-.hambuger img {
-    width: 30px;
-    height: auto;
+.login-button {
+  width: 100%;
+  height: clamp(2.75rem, 5vh, 3.25rem);
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--orange);
+  color: var(--white);
+  font-weight: 500;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.05s ease;
 }
-*/
+
+.login-button:hover {
+  background: var(--orange-dark);
+}
+
+.login-button:active {
+  transform: translateY(0.0625rem);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.7rem, 1vw, 1rem);
+  margin: clamp(1.4rem, 2.8vh, 2rem) clamp(1rem, 1.5vw, 1.25rem) clamp(1.2rem, 2.4vh, 1.6rem);
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: #e4e4e4;
+}
+
+.google-button {
+  width: 100%;
+  height: clamp(2.75rem, 5vh, 3.25rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.5rem, 0.8vw, 0.7rem);
+  border: 1px solid var(--border, #dedede);
+  border-radius: var(--radius-sm);
+  background: var(--white);
+  color: var(--text);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.google-button:hover {
+  border-color: var(--orange);
+  box-shadow: var(--shadow-sm);
+}
+
+.google-icon {
+  width: clamp(0.8rem, 1vw, 1rem);
+  height: clamp(0.8rem, 1vw, 1rem);
+  flex: 0 0 auto;
+}
+
+.signup {
+  margin: clamp(1rem, 2vh, 1.4rem) 0 0;
+  text-align: center;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.signup a {
+  color: var(--orange);
+  font-weight: 500;
+  margin-left: clamp(0.15rem, 0.3vw, 0.25rem);
+}
+
+@media (max-width: 700px) {
+  .login-page {
+    grid-template-columns: 1fr;
+  }
+
+  .right-panel {
+    display: none;
+  }
+}
