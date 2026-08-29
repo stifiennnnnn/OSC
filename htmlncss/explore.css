@@ -97,3 +97,53 @@ nav {
     padding: 0px 10px;
 }
 
+.profileredi, .notification {
+    background: transparent;  /* Menghilangkan warna latar belakang */
+    border: none;             /* Menghilangkan garis tepi */
+    padding: 0;               /* Menghilangkan jarak dalam bawaan */
+    cursor: pointer;          /* Mengubah kursor saat diarahkan ke tombol */
+    outline: none; 
+    padding: 0px 30px 0px 0px; 
+}
+
+.breakfast {
+    position: absolute;
+    transform: translate(650px, -249px);
+    width: 510px;
+}
+
+.title {
+    color: #ff7017;
+    font-size: 40px;
+    margin-top: -15px;
+    margin-bottom: -15px;
+}
+
+.choice {
+    padding: 40px;
+    margin: 50px;
+    position: relative;
+    border: 2px solid #ff7017;
+    border-top: 77px solid #ff7017;
+    border-radius: 33px;
+    margin-top: 40px;
+}
+
+.Choose {
+    position: absolute;
+    top: -60px;
+    font-weight: 600;
+    color: white;
+}
+
+.selection {
+   display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Membuat 5 kolom sama lebar */
+    gap: 20px;                             /* Jarak antar toko */
+    align-items: start;
+    padding-top: 15px;
+}
+
+.selection p {
+    color: #ff7017;
+}
