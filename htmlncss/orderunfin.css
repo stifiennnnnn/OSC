@@ -1,0 +1,82 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* PERBAIKAN 1: Pindahkan overflow-x ke body saja (bukan html) agar sticky header tidak rusak */
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.header {
+    background-color: #ff914d;
+    position: -webkit-sticky; /* Dukungan untuk browser Safari */
+    position: sticky;
+    top: 0;
+    z-index: 9999; /* Dipastikan paling atas dari semua elemen */
+    width: 100%;
+}
+
+.logo {
+    max-width: 65%;
+    height: auto;
+    margin: 0px 10px 0px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: relative;
+}
+
+.navli {
+    margin-top: 10px;
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navli a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 5px 12px;
+    transition: all 0.3s ease;
+}
+
+.navli a.active {
+    color: #ff7017;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 19.5px;
+}
+
+.hambuger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px; 
+}
+
+.profileredi, .notification {
+    background: transparent;  /* Menghilangkan warna latar belakang */
+    border: none;             /* Menghilangkan garis tepi */
+    padding: 0;               /* Menghilangkan jarak dalam bawaan */
+    cursor: pointer;          /* Mengubah kursor saat diarahkan ke tombol */
+    outline: none; 
+    padding: 0px 30px 0px 0px; 
+}
