@@ -45,9 +45,12 @@ body {
   line-height: 1.5;
 }
 
+nav a {
+  text-decoration: none;
+}
+
 a {
   color: inherit;
-  text-decoration: none;
 }
 
 img {
