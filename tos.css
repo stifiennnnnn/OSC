@@ -17,20 +17,11 @@ body {
 /* --- HEADER & NAVIGASI --- */
 .header {
     background-color: #ff914d;
+    position: -webkit-sticky; /* Dukungan untuk browser Safari */
     position: sticky;
     top: 0;
-    z-index: 9999;
+    z-index: 9999; /* Dipastikan paling atas dari semua elemen */
     width: 100%;
-    left: 0;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 5%;
-    width: 100%;
-    position: relative;
 }
 
 .logo {
@@ -39,7 +30,16 @@ nav {
     margin: 0px 10px 0px 30px;
 }
 
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: relative;
+}
+
 .navli {
+    margin-top: 10px;
     display: flex;
     list-style: none;
     gap: 15px;
@@ -64,6 +64,16 @@ nav {
     background-color: white;
     border: 1px solid white;
     border-radius: 19.5px;
+}
+
+.singup {
+    background-color: #ffffff;
+    color: #ff7017;
+    font-weight: bold;
+    font-size: 25px;
+    border: none;
+    border-radius: 30px;
+    padding:    10px 40px 10px 40px;
 }
 
 .hambuger {
