@@ -1,0 +1,96 @@
+.kotak-history {
+    padding: 40px;
+    margin: 50px;
+    position: relative;
+    border: 2px solid #ff7017;
+    border-top: 77px solid #ff7017;
+    border-radius: 33px;
+    margin-top: 40px;
+}
+
+.title {
+    position: absolute;
+    top: -60px;
+    font-weight: 600;
+    font-size: 30px;
+    color: white;
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 30px;
+}
+
+.order-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid #ff914d;
+    border-radius: 20px;
+    padding: 12px 20px;
+}
+
+.card-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.card-left img {
+    width: 130px;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+.item-info h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 4px;
+}
+
+.item-info .price {
+    font-size: 16px;
+    color: #444;
+    font-weight: 500;
+}
+
+.card-right {
+    text-align: right;
+}
+
+.status {
+    font-weight: 600;
+    font-size: 25px;
+    display: block;
+    margin-bottom: 25px;
+    margin-top: -35px;
+}
+
+.status-success { 
+    color: #31c440; 
+}
+
+.status-cancelled { 
+    color: #ff3b30; }
+
+.status-done { 
+    color: #8e8e93; 
+}
+
+.date, .time {
+    font-size: 16px;
+    color: #8e8e93;
+    line-height: 1.35;
+}
+
+.profileredi, .notification {
+    background: transparent;  
+    border: none;             
+    padding: 0;               
+    cursor: pointer;          
+    outline: none; 
+    padding: 0px 30px 0px 0px; 
+}

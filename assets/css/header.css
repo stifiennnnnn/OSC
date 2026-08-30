@@ -37,7 +37,7 @@ nav ul {
 
 nav ul li a {
   font-weight: 600;
-  transition: color 0.2s ease;
+  transition: color 0.33s ease;
   color: var(--text);
 }
 
@@ -54,6 +54,55 @@ nav .btn {
   font-size: 1.2em;
   padding: 0.75rem clamp(3rem, 4.2vw, 3.5rem);
   border-radius: var(--radius-sm);
+}
+
+nav .right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-shrink: 0;
+}
+
+nav .right a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+nav .right img {
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+nav .notif-icon {
+  width: 2.5rem;
+  height: auto;
+  padding: 0.1em;
+  filter: brightness(0);
+  transition: filter 0.33s ease;
+}
+
+nav .right a:hover .notif-icon {
+  filter: brightness(1);
+}
+
+nav .profile-icon {
+  width: 3rem;
+  height: auto;
+}
+
+nav .right a:last-child {
+  outline: 2px solid transparent;
+  outline-offset: 3px;
+  transition: outline-color 0.33s ease;
+}
+
+nav .right a:last-child:hover {
+  outline-color: var(--orange);
 }
 
 /* ========================================
