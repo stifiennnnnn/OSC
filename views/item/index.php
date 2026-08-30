@@ -4,9 +4,27 @@
 <link rel="stylesheet" href="../../assets/css/home.css">
 <body>
   <?php include '../../includes/header-main.php'; ?>
+  <?php
+    $vendor_id = isset($_GET['vendor_id']) ? (int)$_GET['vendor_id'] : null;
+    $vendor_name = null;
+
+    if ($vendor_id !== null) {
+        $vendor_query = "SELECT vendor_name FROM vendor WHERE vendor_id = $vendor_id";
+        $vendor_result = mysqli_query($connection, $vendor_query);
+
+        if ($vendor_result && $vendor_row = mysqli_fetch_assoc($vendor_result)) {
+            $vendor_name = $vendor_row['vendor_name'];
+        }
+    }
+    ?>
   <main>
     <section>
-      <h2 class="title item-title">Mrs. Win's Chicken Smackdown</h2>
+        <h2 class="title item-title">
+            <?php echo $vendor_id !== null && $vendor_name
+                ? htmlspecialchars($vendor_name)
+                : '';
+            ?>
+        </h2>
         <div class="kotak">
             <!-- <a href="../../views/home/index.php">
                 <img src="../../assets/images/ARROW.png" class="return" alt="back">

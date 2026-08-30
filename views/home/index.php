@@ -7,7 +7,7 @@
   <main>
     <section>
       <div class="kotak">
-          <h2  class="greet">Hi, <span>USERDUMMY!</span></h2>
+          <h2  class="greet">Hi, <span><?php echo isset($_SESSION['username']) ? htmlspecialchars($_SESSION['username']) : 'User'; ?>!</span></h2>
           <h1 class="title">What would you<br>like to eat today?</h1>
           <img src="../../assets/images/breakfast food-bro 2.png" alt="ilust makanan" class="breakfast">
       </div>
