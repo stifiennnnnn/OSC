@@ -1,0 +1,294 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+    background-color: #FFAB7E;
+}
+
+/* ================= HEADER (TETAP) ================= */
+.header {
+    background-color: #ff914d;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.logo {
+    max-width: 65%;
+    height: auto;
+    margin: 0px 10px 0px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    position: relative;
+}
+
+.navli {
+    margin-top: 10px;
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.navli a {
+    text-decoration: none;
+    color: white;
+    font-weight: 400;
+    font-size: 18px;
+    white-space: nowrap;
+    padding: 5px 12px;
+    transition: all 0.3s ease;
+}
+
+.navli a.active {
+    color: #ff7017;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 19.5px;
+}
+
+.hambuger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px; 
+}
+
+.profileredi, .notification {
+    background: transparent;  
+    border: none;             
+    padding: 0;               
+    cursor: pointer;       
+    outline: none; 
+    padding: 0px 30px 0px 0px; 
+}
+
+/* ================= CONTAINER SEKSI PROFIL ================= */
+.profile-section {
+    min-height: calc(100vh - 75px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; /* Memaksa elemen menempel ke bawah layar */
+    padding-top: 60px;
+}
+
+.profile-container {
+    display: flex;
+    align-items: flex-end;
+    width: 90%;
+    max-width: 950px;
+}
+
+/* ================= KARTU KIRI (ORANYE) ================= */
+.rectangle {
+    width: 330px;
+    height: 660px;
+    flex-shrink: 0;        /* Mencegah kartu gepeng */
+    background-color: #FF7037;
+    border-radius: 40px 40px 0 0;
+    padding: 0 25px 35px;
+    position: relative;
+    transform: translate(-200px, 100px);
+    z-index: 2;            /* Menimpa kartu kanan */
+    box-shadow: 0px 0px 57px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Foto Profil Off-Grid */
+.avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -65px; 
+}
+
+.avatar {
+    width: 250px;
+    object-fit: cover;
+    margin-top: -60px;
+     filter: drop-shadow(0px 0px 46px 16px rgba(0, 0, 0, 0.5)); 
+}
+
+.btn-edit {
+    margin-top: -10px;
+    background: #fff;
+    color: #FF7037;
+    border: none;
+    padding: 5px 30px;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 10%;
+}
+
+.greeting {
+    color: #fff;
+    font-size: 60px;
+    font-weight: 700;
+    line-height: 1.5;
+    margin-bottom: 140px;
+}
+
+/* ================= KARTU KANAN (PUTIH) ================= */
+.rectangle2 {
+    min-width: 1050px;
+    height: 640px;
+    background-color: #FFFFFF;
+    border-radius: 0 40px 0 0;
+    padding: 35px 45px 25px 70px; /* Padding kiri 70px agar teks tak tertutup kartu oranye */
+    margin-left: -35px;           /* Menarik kartu masuk ke belakang kartu oranye */
+    position: relative;
+    transform: translate(-180px, 100px);
+    z-index: 1;
+    box-shadow: 0px 0px 57px 16px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.user-header h2 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #111;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.badge {
+    background: #ffe3d1;
+    color: #ff7017;
+    font-size: 11px;
+    padding: 3px 12px;
+    border-radius: 12px;
+    font-weight: 600;
+}
+
+.major {
+    color: #777;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+.contact-info {
+    display: flex;
+    gap: 35px;
+    margin: 15px 0;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #222;
+    font-weight: 500;
+    margin-top: -20px;
+}
+
+.info-item2 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 13.5px;
+    color: #222;
+    font-weight: 500;
+    margin-top: -20px;
+    margin-left: 400px;
+}
+
+.info-item .phone {
+    width: 18px;
+    height: 18px;
+}
+
+.divider {
+    border: none;
+    border-top: 3px solid #D5D5D5;
+    margin-bottom: 20px;
+    margin-top: 0;
+    width: 800px;
+}
+
+/* List Menu */
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-btn {
+    width: 800px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    background: #f9f9f9;
+    border: 2px solid #e5e5e5;
+    border-radius: 12px;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.menu-arrow {
+    width: 12px;
+    height: 12px;
+    object-fit: contain;
+}
+
+/* Tombol Logout */
+.logout-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.btn-logout {
+    background-color: #ff5252;
+    color: white;
+    border: none;
+    padding: 10px 45px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-left: -100px;
+}
+
+.bg-pattern {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    object-fit: cover;        /* Memastikan gambar memenuhi seluruh area */
+    z-index: 0;               /* Ditaruh di lapisan paling belakang */
+    margin-top: 130px;
+    pointer-events: none;    /* KUNCI: Biar mouse/klik bisa menembus ke tombol di atasnya */
+}
+
+.mail {
+    width: 50px;
+}
