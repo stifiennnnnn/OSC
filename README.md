@@ -50,12 +50,14 @@ C:\xampp\htdocs\OSC
 
 The project structure should look similar to:
 
+```text
 OSC/
 ├── assets/
 ├── includes/
 ├── views/
 ├── db.sql
 └── index.php
+```
 
 ### 2. Start XAMPP
 
@@ -128,6 +130,7 @@ After successfully passing the password wall, the admin panel provides access to
 
 A simplified structure of the project is:
 
+```text
 OSC/
 ├── assets/
 │   ├── css/
@@ -148,6 +151,7 @@ OSC/
 │
 ├── db.sql
 └── index.php
+```
 
 ## Database
 
