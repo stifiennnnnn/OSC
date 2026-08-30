@@ -20,7 +20,6 @@
     border: clamp(1px, 0.15vw, 2px) solid var(--orange);
     border-radius: clamp(1.25rem, 2.5vw, 1.75rem);
     padding: clamp(1.25rem, 2.5vw, 2rem);
-    height: 100%;
     display: flex;
     flex-direction: column;
 }

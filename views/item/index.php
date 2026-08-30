@@ -7,211 +7,115 @@
   <main>
     <section>
       <h2 class="title item-title">Mrs. Win's Chicken Smackdown</h2>
-      <div class="kotak">
-            <a href="../../views/home/index.php">
-                <img src="../../assets/images/ARROW.png" class="return" alt="back">
-            </a>
-            <h2 class="Choices">People's Choices</h2>
-            
-            <div class="pick">
-                <div class="menu-item">
-                    <img src="../../assets/images/nasgor 1.png" alt="ilust makanan1">
-                    <p>Nasi Goreng</p>
-                    <p>Rp 15.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="../../assets/images/kulit goreng 1.png" alt="ilust makanan2">
-                    <p>Kulit Goreng</p>
-                    <p>Rp 12.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="../../assets/images/vendor/2.png" alt="ilust makanan3">
-                    <p>Chicken Smackdown</p>
-                    <p>Rp 20.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="../../assets/images/martabak telor 1.png" alt="ilust makanan4">
-                    <p>Martabak Telor</p>
-                    <p>Rp 15.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="../../assets/images/sosis ayam 1.png" alt="ilust makanan5">
-                    <p>Sosis Ayam</p>
-                    <p>Rp 10.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="kotak">
-            <h2 class="Choices2">All Menus</h2>
-            
+            <!-- <a href="../../views/home/index.php">
+                <img src="../../assets/images/ARROW.png" class="return" alt="back">
+            </a> -->
+            <h2 class="Choices2">All Items</h2>
             <div class="pick">
-                <div class="menu-item">
-                    <img src="../../assets/images/ayam gulai 1.png" alt="ilust makanan1">
-                    <p>Ayam Gulai</p>
-                    <p>Rp 18.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
+                <?php 
+                    $vendor_id = isset($_GET['vendor_id']) ? (int)$_GET['vendor_id'] : null;
 
-                <div class="menu-item">
-                    <img src="../../assets/images/ayam suwir 1.png" alt="ilust makanan2">
-                    <p>Ayam Suwir</p>
-                    <p>Rp 15.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
+                    $query = "SELECT * FROM item WHERE vendor_id = '$vendor_id'";
+                    $result = mysqli_query($connection, $query);
 
-                <div class="menu-item">
-                    <img src="../../assets/images/cumi pedas 1.png" alt="ilust makanan3">
-                    <p>Cumi Pedas</p>
-                    <p>Rp 20.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
+                    while ($row = mysqli_fetch_assoc($result)) {
+                        echo '<div class="menu-item" 
+                                    data-item-id="' . $row['item_id'] . '"
+                                    data-item-name="' . htmlspecialchars($row['item_name']) . '"
+                                    data-item-price="' . $row['item_price'] . '">';
 
-                <div class="menu-item">
-                    <img src="../../assets/images/nasgor 2.png" alt="ilust makanan4">
-                    <p>Nasi Goreng</p>
-                    <p>Rp 15.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
+                        if (file_exists('../../assets/images/' . $row['item_id'] . '.png')) {
+                            echo '<img src="../../assets/images/' . $row['item_id'] . '.png" alt="ilust makanan">';
+                        } else {
+                            echo '<img src="../../assets/images/' . $row['item_id'] . '.jpg" alt="ilust makanan">';
+                        }
 
-                <div class="menu-item">
-                    <img src="../../assets/images/kulit goreng 1.png" alt="ilust makanan5">
-                    <p>Kulit Goreng</p>
-                    <p>Rp 12.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
+                        echo '<p>' . htmlspecialchars($row['item_name']) . '</p>';
+                        echo '<p>Rp ' . number_format($row['item_price'], 0, ',', '.') . '</p>';
 
-                <div class="menu-item">
-                    <img src="../../assets/images/martabak telor 1.png" alt="ilust makanan6">
-                    <p>Martabak Telor</p>
-                    <p>Rp 15.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
+                        echo '<div class="quantity">';
+                        echo '<button type="button" onclick="decreaseQuantity(this)">-</button>';
+                        echo '<span>0</span>';
+                        echo '<button type="button" onclick="increaseQuantity(this)">+</button>';
+                        echo '</div>';
 
-                <div class="menu-item">
-                    <img src="../../assets/images/sosis ayam 1.png" alt="ilust makanan7">
-                    <p>Sosis Ayam</p>
-                    <p>Rp 10.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="../../assets/images/telor balado 1.png" alt="ilust makanan8">
-                    <p>Telor Balado</p>
-                    <p>Rp 10.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="../../assets/images/tempe orek 1.png" alt="ilust makanan9">
-                    <p>Tempe Orek</p>
-                    <p>Rp 8.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
-
-                <div class="menu-item">
-                    <img src="../../assets/images/nasi kuning 1.png" alt="ilust makanan10">
-                    <p>Nasi Kuning</p>
-                    <p>Rp 12.000</p>
-                    <div class="quantity">
-                        <button type="button" onclick="decreaseQuantity(this)">-</button>
-                        <span>0</span>
-                        <button type="button" onclick="increaseQuantity(this)">+</button>
-                    </div>
-                </div>
+                        echo '</div>';
+                    }
+                ?>
             </div>
         </div>
+        
         <div class="proceed-button">
-            <button class="btn-proceed" onclick="document.location.href='../../views/payment/index.php'">Proceed to Payment</button>
+            <button class="btn-proceed" onclick="proceedToOrders()">
+                Proceed to Orders
+            </button>
         </div>
       </section>
-  </main>
-  <?php include '../../includes/footer.php'; ?>
+    </main>
+    <?php include '../../includes/footer.php'; ?>
+    <script>
+        function increaseQuantity(button) {
+            const menuItem = button.closest('.menu-item');
+            const quantity = menuItem.querySelector('.quantity span');
 
-  <script>
-    function increaseQuantity(button) {
-        const quantity = button.parentElement.querySelector('span');
-        let value = parseInt(quantity.textContent);
-        quantity.textContent = value + 1;
-        quantity.style.color = 'var(--orange)';
-    }
+            let value = parseInt(quantity.textContent);
 
-    function decreaseQuantity(button) {
-        const quantity = button.parentElement.querySelector('span');
-        let value = parseInt(quantity.textContent);
+            quantity.textContent = value + 1;
+            quantity.style.color = 'var(--orange)';
+        }
 
-        if (value > 0) {
-            quantity.textContent = value - 1;
-            if (value - 1 === 0) {
-                quantity.style.color = 'var(--text)';
+        function decreaseQuantity(button) {
+            const menuItem = button.closest('.menu-item');
+            const quantity = menuItem.querySelector('.quantity span');
+
+            let value = parseInt(quantity.textContent);
+
+            if (value > 0) {
+                quantity.textContent = value - 1;
+
+                if (value - 1 === 0) {
+                    quantity.style.color = 'var(--text)';
+                }
             }
         }
-    }
-  </script>
+
+        function proceedToOrders() {
+            const menuItems = document.querySelectorAll('.menu-item');
+            const cart = [];
+
+            menuItems.forEach(item => {
+                const quantity = parseInt(
+                    item.querySelector('.quantity span').textContent
+                );
+
+                if (quantity > 0) {
+                    cart.push({
+                        item_id: item.dataset.itemId,
+                        item_name: item.dataset.itemName,
+                        item_price: parseInt(item.dataset.itemPrice),
+                        quantity: quantity
+                    });
+                }
+            });
+
+            if (cart.length === 0) {
+                alert('Please select at least one item.');
+                return;
+            }
+
+            sessionStorage.setItem(
+                'cart',
+                JSON.stringify(cart)
+            );
+
+            const vendorId =
+                new URLSearchParams(window.location.search)
+                    .get('vendor_id');
+
+            window.location.href =
+                '../../views/orders/index.php?vendor_id=' + vendorId;
+        }
+    </script>
 </body>
 </html>
