@@ -105,12 +105,76 @@ nav .right a:last-child:hover {
   outline-color: var(--orange);
 }
 
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+
+  width: 2.75rem;
+  height: 2.75rem;
+
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  width: 1.5rem;
+  height: 0.15rem;
+  background: var(--text);
+  border-radius: 999px;
+
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
 /* ========================================
    Responsive Layout Adjustments
 ======================================== */
 
 @media (max-width: 800px) {
+
+  nav {
+    position: relative;
+  }
+
   nav ul {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    padding: 0.75rem 0;
+    margin: 0;
+
+    background: var(--white);
+    box-shadow: 0 0.5rem 0.75rem rgb(0 0 0 / 5%);
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 0.9rem var(--gutter);
+  }
+
+  nav .right {
+    gap: 0.5rem;
+  }
+
+  .hamburger {
+    display: flex;
   }
 }

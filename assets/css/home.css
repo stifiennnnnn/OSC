@@ -57,12 +57,17 @@
     font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 
+.item-title {
+    text-align: center;
+    padding-top: clamp(1rem, 3vw, 2.5rem);
+}
+
 .choice {
     margin-top: clamp(1rem, 3vw, 2.5rem);
 }
 
 .Choose {
-    top: clamp(-3.5rem, -4vw, -2.5rem);
+    top: clamp(-4rem, -4vw, -3.2rem);
     font-weight: 600;
 }
 
@@ -116,7 +121,7 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: clamp(1rem, 4vw, 3.75rem);
+    gap: clamp(1rem, 4vw, 2rem);
 }
 
 .pick img {
@@ -125,6 +130,88 @@
     margin-block: clamp(-1rem, -2vw, -0.5rem);
     border-radius: clamp(0.75rem, 2vw, 1.25rem);
     object-fit: cover;
+}
+
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-sizing: border-box;
+    padding: 1.5rem;
+    margin: 0.5rem;
+    border: 2px solid var(--orange);
+    border-radius: 1rem;
+    background-color: var(--white);
+    width: 20rem;
+}
+
+.menu-item p {
+    margin: 1.5rem 0 0;
+    color: var(--orange);
+    font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+    font-weight: 600;
+}
+
+.menu-item p:nth-of-type(2) {
+    margin-top: 0.2rem;
+    font-size: clamp(0.8rem, 1.3vw, 1rem);
+    font-weight: 500;
+}
+
+.quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+.quantity button {
+    width: 2rem;
+    height: 2rem;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--orange);
+    color: var(--white);
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.quantity button:hover {
+    opacity: 0.8;
+    transform: scale(1.05);
+}
+
+.quantity span {
+    min-width: 1.5rem;
+    color: var(--orange);
+    font-size: 1rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.proceed-button {
+    display: flex;
+    justify-content: center;
+    margin-top: clamp(1rem, 3vw, 2.5rem);
+}
+
+.btn-proceed {
+    background-color: var(--orange);
+    text-align: center;
+    color: white;
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange-dark);
+    padding: clamp(0.75rem, 1.2vw, 0.9rem);
+    border-radius: clamp(0.6rem, 1vw, 0.75rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 600;
+    cursor: pointer;
+    margin-bottom: clamp(1rem, 3vw, 2.5rem);
+    width: 75%;
 }
 
 @media (max-width: 768px) {
@@ -165,5 +252,28 @@
 
     .pick img {
         width: clamp(8rem, 40vw, 10rem);
+    }
+
+    .menu-item {
+        margin: 0.3rem;
+    }
+
+    .menu-item p {
+        font-size: 0.9rem;
+    }
+
+    .menu-item p:nth-of-type(2) {
+        font-size: 0.8rem;
+    }
+
+    .quantity {
+        gap: 0.5rem;
+        margin-top: 0.5rem;
+    }
+
+    .quantity button {
+        width: 1.8rem;
+        height: 1.8rem;
+        font-size: 1rem;
     }
 }
