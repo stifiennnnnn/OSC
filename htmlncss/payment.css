@@ -1,0 +1,189 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+.header {
+    background-color: #ff914d;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    width: 100%;
+}
+
+.logo {
+    max-width: 65%;
+    height: auto;
+    margin: 0px 10px 10px 30px;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1px 5%;
+    position: relative;
+}
+
+.profileredi, .notification {
+    background: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    outline: none; 
+    padding: 0px 30px 0px 0px; 
+}
+
+.return {
+    position: absolute;
+    left: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+}
+
+.return img {
+    width: 50px;
+    position: absolute;
+}
+
+/* Container Utama */
+.checkout-wrapper {
+    display: flex;
+    gap: 30px;
+    padding: 30px 50px;
+}
+
+.kiri, .kanan {
+    flex: 1;
+}
+
+.title {
+    font-size: 26px;
+    font-weight: 500;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+.payment-box {
+    border: 2px solid #ff7017;
+    border-radius: 28px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-title, .subtotal-title {
+    font-size: 20px;
+    color: #333;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.summary-list {
+    list-style: none;
+    padding: 0;
+    margin: 5px 0 15px 0;
+}
+
+.summary-list li {
+    font-size: 20px;
+    color: #333;
+    line-height: 1.5;
+}
+
+.subtotal-price {
+    font-size: 20px;
+    color: #333;
+    margin-top: 4px;
+}
+
+.total-section {
+    margin-top: 15px;
+}
+
+.total-section h3 {
+    font-size: 30px;
+    font-weight: 500;
+    color: #222;
+}
+
+.total-price {
+    font-size: 65px;
+    color: #ff5e00;
+    font-weight: 600;
+    margin: 45px 0 30px;
+}
+
+.btn-proceed {
+    background-color: #FF914D;
+    color: white;
+    border: 2px solid #ff5e00;
+    padding: 14px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    width: 100%;
+    text-align: left;
+}
+
+.method-box {
+    border: 2px solid #ff7017;
+    border-radius: 28px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0px 0px;
+}
+
+.method-card {
+    border: none;
+    background: #fff;
+    padding: 15px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.method-card img {
+    width: 150px;
+    object-fit: contain;
+}
+
+.btn-see-more {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px 16px;
+    color: #aaa;
+    font-size: 20px;
+    cursor: pointer;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-see-more:hover {
+    border-color: #ccc;
+    color: #666;
+}
