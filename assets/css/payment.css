@@ -1,0 +1,129 @@
+.checkout-wrapper {
+    display: flex;
+    gap: clamp(1rem, 2.5vw, 2rem);
+    padding: clamp(1rem, 3vw, 2rem) clamp(1.5rem, 4vw, 3rem);
+}
+
+.kiri,
+.kanan {
+    flex: 1;
+}
+
+.title {
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 500;
+    color: #222;
+    margin-bottom: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.payment-box {
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange);
+    border-radius: clamp(1.25rem, 2.5vw, 1.75rem);
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.summary-title,
+.subtotal-title {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: #333;
+    font-weight: 500;
+    margin-top: clamp(0.5rem, 1vw, 0.6rem);
+}
+
+.summary-list {
+    list-style: none;
+    padding: 0;
+    margin: clamp(0.25rem, 0.5vw, 0.3rem) 0 clamp(0.75rem, 1.2vw, 1rem) 0;
+}
+
+.summary-list li {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: #333;
+    line-height: 1.5;
+}
+
+.subtotal-price {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    color: #333;
+    margin-top: clamp(0.25rem, 0.4vw, 0.25rem);
+}
+
+.total-section {
+    margin-top: clamp(0.75rem, 1.2vw, 1rem);
+}
+
+.total-section h3 {
+    font-size: clamp(1.5rem, 2.3vw, 2rem);
+    font-weight: 500;
+    color: #222;
+}
+
+.total-price {
+    font-size: clamp(1.75rem, 5vw, 4rem);
+    color: var(--orange);
+    font-weight: 600;
+}
+
+.btn-proceed {
+    background-color: var(--orange);
+    text-align: center;
+    color: white;
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange-dark);
+    padding: clamp(0.75rem, 1.2vw, 0.9rem);
+    border-radius: clamp(0.6rem, 1vw, 0.75rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: clamp(1.5rem, 2.5vw, 2rem);
+    margin-bottom: clamp(0.5rem, 1vw, 0.6rem);
+    width: 100%;
+}
+
+.method-box {
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange);
+    border-radius: clamp(1.25rem, 2.5vw, 1.75rem);
+    padding: clamp(1.25rem, 2.5vw, 2rem);
+    display: flex;
+    flex-direction: column;
+}
+
+.payment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+}
+
+.method-card {
+    border: none;
+    background: #fff;
+    padding: clamp(0.75rem, 1.5vw, 1rem) clamp(0rem, 0.5vw, 0.6rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+
+.method-card:hover {
+    opacity: 1;
+}
+
+.method-card.active {
+    opacity: 1;
+    border: clamp(2px, 0.15vw, 3px) solid var(--orange);
+    border-radius: clamp(0.6rem, 1vw, 1rem);
+}
+
+.method-card img {
+    object-fit: contain;
+}
+
+@media (max-width: 48rem) {
+    .checkout-wrapper {
+        flex-direction: column;
+    }
+}
