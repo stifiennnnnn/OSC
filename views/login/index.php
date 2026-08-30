@@ -52,7 +52,7 @@ if (isset($_SESSION['uid'])) {
             </div>
           </div>
 
-          <a class="forgot" href="../../views/forget/index.php">Forgot Password?</a>
+          <a class="forgot" onclick="alert('Verification email sent!')">Forgot Password?</a>
 
           <button class="login-button" type="submit">Login</button>
         </form>

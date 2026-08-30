@@ -12,6 +12,7 @@ Students can browse available menu items, place orders before break time, and co
 - Order receipt through email
 - Responsive web interface
 - School canteen focused ordering workflow
+- Admin panel for database management
 
 ## Technologies
 
@@ -109,6 +110,20 @@ http://localhost/OSC/
 
 If your project is located in a different folder, replace `OSC` with the appropriate directory name.
 
+## Admin Panel
+
+The admin panel is located at:
+
+views/admin/index.php
+
+The admin panel is protected by a password wall. Enter the following password to unlock access:
+
+admin
+
+After successfully passing the password wall, the admin panel provides access to the CRUD features for the database, allowing administrators to create, read, update, and delete database records.
+
+> Security Note: The password is currently hard-coded as `admin` and is intended for local development/educational use. It should be changed to a secure authentication system before deploying the application to a production environment.
+
 ## Project Structure
 
 A simplified structure of the project is:
@@ -125,6 +140,8 @@ OSC/
 │   └── footer.php
 │
 ├── views/
+│   ├── admin/
+│   │   └── index.php
 │   ├── home/
 │   ├── login/
 │   └── ...
@@ -180,6 +197,18 @@ For a typical local XAMPP setup, the host is:
 
 localhost
 
+### Cannot Access the Admin Panel
+
+Make sure you are accessing:
+
+views/admin/index.php
+
+The admin password is:
+
+admin
+
+Once authenticated, the CRUD functionality should be available.
+
 ## Important Notes
 
 - This project is intended to run in a local XAMPP environment.
@@ -187,6 +216,10 @@ localhost
 - MySQLi is used for database communication.
 - `db.sql` must be imported before using the application.
 - Make sure Apache and MySQL are running before accessing the application.
+- The admin panel is located at `views/admin/index.php`.
+- The admin panel is protected by a password wall using the password `admin`.
+- Successful authentication unlocks the database CRUD features.
+- The default admin password should **not** be used in a production environment.
 
 ## License
 

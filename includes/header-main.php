@@ -15,12 +15,12 @@ include_once __DIR__ . '/auth.php';
       <li><a href="/OSC/views/history/index.php">History</a></li>
     </ul>
     <div class="right">
-      <a href="/OSC/views/notifications/index.php">
+      <!--<a href="/OSC/views/notifications/index.php">
         <img src="/OSC/assets/images/notif.svg" class="notif-icon" alt="Notifications">
-      </a>
+      </a>-->
 
-      <a href="/OSC/views/profile/index.php">
-        <img src="/OSC/assets/images/profile-icon.png" class="profile-icon" alt="Profile">
+      <a onclick="logout()" style="cursor: pointer;">
+        <img src="/OSC/assets/images/profile-icon.png" src="/OSC/assets/images/profile.svg" class="profile-icon" alt="Profile">
       </a>
       <button class="hamburger" type="button" aria-label="Open menu" aria-expanded="false">
         <span></span>
@@ -31,4 +31,11 @@ include_once __DIR__ . '/auth.php';
   </nav>
 </header>
 
+<script>
+  function logout() {
+    if (confirm("Logout from account?")) {
+      window.location.href = "/OSC/controllers/logout.php";
+    }
+  }
+</script>
 <script src="/OSC/assets/js/header-main.js"></script>
