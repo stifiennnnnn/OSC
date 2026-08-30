@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <?php include '../../includes/head.php'; ?>
-<link rel="stylesheet" href="../../assets/css/explore.css">
+<link rel="stylesheet" href="../../assets/css/home.css">
 <body>
   <?php include '../../includes/header-main.php'; ?>
   <main class="explore-page">

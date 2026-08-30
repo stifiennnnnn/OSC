@@ -1,0 +1,169 @@
+.kotak,
+.choice {
+    position: relative;
+    margin: clamp(1rem, 3vw, 2.5rem);
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange);
+    border-top: clamp(3.5rem, 6vw, 4.8rem) solid var(--orange);
+    border-radius: clamp(1rem, 2.5vw, 2rem);
+}
+
+.kotak {
+    margin-top: clamp(1rem, 3vw, 2.5rem);
+}
+
+.greet,
+.Choose,
+.Choices,
+.Choices2 {
+    position: absolute;
+    color: var(--white);
+}
+
+.greet {
+    top: clamp(-3.2rem, -4vw, -2.5rem);
+    font-weight: 400;
+}
+
+.greet span {
+    font-weight: 700;
+}
+
+.kotak h1 {
+    padding-inline: clamp(0.25rem, 1vw, 0.625rem);
+}
+
+.profileredi,
+.notification,
+.menu-button {
+    padding: 0 clamp(0.5rem, 2vw, 1.875rem) 0 0;
+    border: none;
+    outline: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+.breakfast {
+    position: absolute;
+    width: clamp(15rem, 35vw, 31.875rem);
+    max-width: 45%;
+    right: clamp(1rem, 5vw, 4rem);
+    bottom: 0;
+}
+
+.title {
+    margin-block: clamp(-0.75rem, -1vw, -0.25rem);
+    color: var(--orange);
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.choice {
+    margin-top: clamp(1rem, 3vw, 2.5rem);
+}
+
+.Choose {
+    top: clamp(-3.5rem, -4vw, -2.5rem);
+    font-weight: 600;
+}
+
+.Choices,
+.Choices2 {
+    top: clamp(-3.5rem, -4vw, -2.5rem);
+    font-size: clamp(1.25rem, 2.5vw, 1.875rem);
+    font-weight: 600;
+}
+
+.Choices {
+    margin-left: clamp(1rem, 4vw, 3.5rem);
+}
+
+.selection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(clamp(7rem, 15vw, 11rem), 1fr));
+    gap: clamp(0.75rem, 2vw, 1.5rem);
+    align-items: start;
+    justify-items: center;
+    padding-top: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.selection p {
+    color: var(--orange);
+    font-size: clamp(0.9rem, 1.5vw, 1.125rem);
+}
+
+.canteen-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+}
+
+.canteen-item img {
+    max-width: none;
+}
+
+.return {
+    position: absolute;
+    top: clamp(-3.5rem, -4vw, -2.5rem);
+    left: clamp(0.75rem, 2vw, 1.5rem);
+    width: clamp(1.75rem, 4vw, 3.125rem);
+    cursor: pointer;
+}
+
+.pick {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(1rem, 4vw, 3.75rem);
+}
+
+.pick img {
+    width: clamp(7rem, 15vw, 11.25rem);
+    max-width: 100%;
+    margin-block: clamp(-1rem, -2vw, -0.5rem);
+    border-radius: clamp(0.75rem, 2vw, 1.25rem);
+    object-fit: cover;
+}
+
+@media (max-width: 768px) {
+    .kotak,
+    .choice {
+        margin-inline: clamp(0.75rem, 3vw, 1.5rem);
+    }
+
+    .breakfast {
+        position: relative;
+        top: 1rem;
+        right: auto;
+        width: min(100%, 25rem);
+        max-width: 100%;
+        margin: 1rem auto 0;
+        display: block;
+    }
+
+    .selection {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .kotak,
+    .choice {
+        padding: 1rem;
+        border-top-width: 3.5rem;
+    }
+
+    .selection {
+        grid-template-columns: 1fr;
+    }
+
+    .pick {
+        gap: 1.25rem;
+    }
+
+    .pick img {
+        width: clamp(8rem, 40vw, 10rem);
+    }
+}

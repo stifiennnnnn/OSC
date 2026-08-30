@@ -1,194 +1,202 @@
 .checkout-wrapper {
     display: flex;
-    gap: 30px;
-    padding: 30px 50px;
+    gap: clamp(1rem, 2.5vw, 2rem);
+    padding: clamp(1rem, 3vw, 3rem) clamp(1rem, 5vw, 5rem);
+    width: 100%;
+    max-width: 100vw;
+    box-sizing: border-box;
 }
 
-.kiri, .kanan {
+.kiri,
+.kanan {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+.cart,
+.pickup,
+.total-box {
+    width: 100%;
+    box-sizing: border-box;
+    border: clamp(1px, 0.15vw, 2px) solid #ff7017;
+    border-radius: clamp(1rem, 2vw, 1.75rem);
 }
 
 .cart {
-    border: 2px solid #ff7017;
-    border-radius: 28px;
-    padding: 30px;
+    padding: clamp(1rem, 2.5vw, 1.875rem);
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.sub, .sub2 {
-    font-size: 12px;
+.sub,
+.sub2 {
+    font-size: clamp(0.7rem, 0.8vw, 0.8rem);
     color: #8e8e93;
-    margin-top: 4px;
-    margin-bottom: 20px;
+    margin-top: 0.25rem;
+    margin-bottom: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
 .sub {
-    margin-left: -170px;
-    margin-top: -3px;
+    align-self: flex-start;
 }
 
 .sub2 {
-    margin-left: 50px;
-    margin-top: -3px;
+    align-self: flex-start;
 }
 
 .cart .heading {
-    font-size: 24px;
+    width: 100%;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
     font-weight: 600;
-    text-align: right;
-    margin-left: -300px;
-    margin-top: -25px;
+    text-align: left;
+    margin: 0 0 clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .cart-isi {
     width: 100%;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
-    border: 2px solid #ff7017;
-    border-radius: 20px;
-    padding: 10px 18px;
-    margin-bottom: 15px;
-    gap: 12px;
+    border: clamp(1px, 0.15vw, 2px) solid #ff7017;
+    border-radius: clamp(0.75rem, 1.5vw, 1.25rem);
+    padding: clamp(0.6rem, 1.2vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.125rem);
+    margin-bottom: clamp(0.6rem, 1.2vw, 0.9rem);
+    gap: clamp(0.6rem, 1.2vw, 0.9rem);
 }
 
 .cart-isi img {
-    width:75px;
-    height: 75px;
-    border-radius: 12px;
+    width: clamp(3.5rem, 6vw, 4.75rem);
+    height: clamp(3.5rem, 6vw, 4.75rem);
+    flex-shrink: 0;
+    border-radius: clamp(0.6rem, 1vw, 0.75rem);
     object-fit: cover;
-    margin-left: -10px;
-    margin-bottom: -5x;
-    justify-items: center;
 }
 
 .badge {
     background-color: #ff5e00;
     color: white;
-    font-size: 12px;
+    font-size: clamp(0.65rem, 0.8vw, 0.75rem);
     font-weight: bold;
-    padding: 2px 7px;
-    border-radius: 5px;
+    padding: 0.15rem 0.45rem;
+    border-radius: 0.3rem;
 }
 
 .detail {
     flex: 1;
+    min-width: 0;
 }
 
 .detail h3 {
-    font-size: 16px;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
     font-weight: 600;
+    margin: 0 0 0.25rem;
 }
 
 .detail .price {
-    font-size: 14px;
+    font-size: clamp(0.8rem, 1vw, 0.9rem);
     font-weight: 500;
     color: #444;
+    margin: 0;
 }
 
 .qty {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
     border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 4px 10px;
+    border-radius: 0.5rem;
+    padding: 0.25rem clamp(0.5rem, 1vw, 0.65rem);
     color: #ff7017;
     font-weight: 600;
+    flex-shrink: 0;
 }
 
 .qty button {
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: clamp(0.9rem, 1.2vw, 1rem);
 }
 
 .add {
-    width: 70%;
-    border: 2px solid #ff7017;
+    width: min(70%, 25rem);
+    border: clamp(1px, 0.15vw, 2px) solid #ff7017;
     background: white;
     color: #ff7017;
-    padding: 15px 50px;
-    border-radius: 10px;
-    font-size: 20px;
+    padding: clamp(0.7rem, 1.5vw, 0.95rem) clamp(1rem, 3vw, 3.125rem);
+    border-radius: clamp(0.5rem, 1vw, 0.75rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: 400;
     cursor: pointer;
-    margin-top: 73px;
-    margin-bottom: 5px;
+    margin-top: clamp(1.5rem, 5vw, 4.5rem);
+    margin-bottom: 0.3rem;
 }
 
 .pickup {
-    border: 2px solid #ff7017;
-    border-radius: 28px;
-    padding: 25px;
-}
-
-.note {
-    position: absolute;
-    right: 240px;
-    margin-top: 47px;
+    padding: clamp(1rem, 2vw, 1.5rem);
 }
 
 .pickup .heading2 {
-    font-size: 24px;
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
     font-weight: 600;
-    margin-top: -18px;
-    margin-left: 50px;
+    margin: 0 0 clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .tanggal {
     display: flex;
-    gap: 8px;
+    gap: clamp(0.4rem, 0.8vw, 0.5rem);
+    flex-wrap: wrap;
 }
 
 .tgl-col {
     display: flex;
     flex-direction: column;
-    gap: 8px;
+    gap: clamp(0.4rem, 0.8vw, 0.5rem);
 }
 
 .tgl-col.offset {
-    margin-top: 20px;
+    margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
 }
 
 .tgl-btn {
     border: 1px solid #eee;
     background: #fff;
-    border-radius: 14px;
-    padding: 8px 12px;
-    font-size: 11px;
+    border-radius: clamp(0.6rem, 1vw, 0.9rem);
+    padding: clamp(0.45rem, 0.8vw, 0.5rem) clamp(0.6rem, 1vw, 0.75rem);
+    font-size: clamp(0.65rem, 0.8vw, 0.7rem);
     color: #444;
     cursor: pointer;
     text-align: center;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+    box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.03);
 }
 
 .pickup-body {
     display: flex;
-    gap: 20px;
+    gap: clamp(0.75rem, 2vw, 1.25rem);
     align-items: stretch;
-    margin-top: 15px;
+    margin-top: clamp(0.75rem, 1.5vw, 1rem);
 }
 
 .jam {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(0.4rem, 0.8vw, 0.5rem);
     align-content: start;
-    margin-left: 20px;
+    flex: 0 1 45%;
+    min-width: 0;
+    margin-left: 0;
 }
 
 .jam-btn {
     border: 1px solid #e5e5e5;
     background: #fff;
-    border-radius: 10px;
-    padding: 3px 16px;
-    font-size: 13px;
+    border-radius: clamp(0.5rem, 0.8vw, 0.65rem);
+    padding: clamp(0.2rem, 0.5vw, 0.3rem) clamp(0.5rem, 1vw, 1rem);
+    font-size: clamp(0.7rem, 1vw, 0.8rem);
     color: #444;
     cursor: pointer;
     text-align: center;
@@ -197,63 +205,232 @@
 
 .catatan {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
-    margin-left: 20px;
+    margin-left: 0;
 }
 
 .catatan label {
-    font-size: 12px;
+    font-size: clamp(0.7rem, 0.8vw, 0.75rem);
     font-weight: 500;
     color: #444;
-    margin-bottom: 6px;
-    margin-left: 45px;
+    margin-bottom: 0.4rem;
+    margin-left: 0;
 }
 
 .catatan textarea {
-    width: 90%;
-    flex: 1;
-    min-height: 160px;
+    width: 100%;
+    min-height: clamp(8rem, 15vw, 10rem);
+    box-sizing: border-box;
     border: 1px solid #e5e5e5;
-    border-radius: 16px;
-    padding: 12px;
+    border-radius: clamp(0.75rem, 1.2vw, 1rem);
+    padding: clamp(0.6rem, 1vw, 0.75rem);
     resize: none;
     outline: none;
     font-family: inherit;
-    margin-left: 15px;
+    margin-left: 0;
 }
 
 .total-box {
-    border: 2px solid #ff7017;
-    border-radius: 28px;
-    padding: 40px 30px;
+    padding: clamp(1.5rem, 3vw, 2.5rem) clamp(1rem, 2.5vw, 1.875rem);
     display: flex;
     flex-direction: column;
 }
 
 .total-box h2 {
-    font-size: 35px;
+    font-size: clamp(1.75rem, 3vw, 2.2rem);
     font-weight: 400;
-    margin-top: 5px;
+    margin: 0.3rem 0 0;
 }
 
 .total-price {
-    font-size: 70px;
+    font-size: clamp(2.75rem, 6vw, 4.5rem);
     color: #ff5e00;
     text-align: center;
-    margin: 15px 0 40px;
+    margin: clamp(0.75rem, 1.5vw, 1rem) 0 clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 600;
+    overflow-wrap: anywhere;
 }
 
 .btn-checkout {
+    width: 100%;
+    box-sizing: border-box;
     background-color: #ff914d;
     color: white;
-    border: 2px solid #ff5e00;
-    padding: 20px;
-    border-radius: 20px;
-    font-size: 20px;
+    border: clamp(1px, 0.15vw, 2px) solid #ff5e00;
+    padding: clamp(0.8rem, 1.5vw, 1.25rem);
+    border-radius: clamp(0.75rem, 1.5vw, 1.25rem);
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: 600;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
     text-align: left;
+}
+
+.kotak-history {
+    width: min(90%, 75rem);
+    margin: 0 auto;
+    padding: clamp(1rem, 4vw, 3rem) 0;
+}
+
+.title {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin: 0 0 clamp(1rem, 2vw, 1.5rem);
+}
+
+.history-list {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(0.75rem, 1.5vw, 1.25rem);
+}
+
+.order-card {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: clamp(1rem, 3vw, 2rem);
+    padding: clamp(0.9rem, 2vw, 1.5rem);
+    border: clamp(1px, 0.15vw, 2px) solid #ff7017;
+    border-radius: clamp(0.9rem, 2vw, 1.5rem);
+}
+
+.card-left {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.75rem, 1.5vw, 1rem);
+    min-width: 0;
+}
+
+.card-left img {
+    width: clamp(4rem, 8vw, 6rem);
+    height: clamp(4rem, 8vw, 6rem);
+    flex-shrink: 0;
+    object-fit: cover;
+    border-radius: clamp(0.6rem, 1vw, 0.8rem);
+}
+
+.item-info {
+    min-width: 0;
+}
+
+.item-info h3 {
+    font-size: clamp(1rem, 1.5vw, 1.25rem);
+    margin: 0 0 0.3rem;
+}
+
+.item-info .price {
+    font-size: clamp(0.8rem, 1vw, 0.95rem);
+    margin: 0;
+    color: #444;
+}
+
+.card-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: clamp(0.2rem, 0.5vw, 0.35rem);
+    text-align: right;
+    flex-shrink: 0;
+}
+
+.status {
+    display: inline-block;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    font-size: clamp(0.7rem, 0.9vw, 0.8rem);
+    font-weight: 600;
+}
+
+.status-success,
+.status-done {
+    color: #16803c;
+    background: #e7f7ed;
+}
+
+.status-cancelled {
+    color: #c62828;
+    background: #fdeaea;
+}
+
+.card-right p {
+    margin: 0;
+    font-size: clamp(0.7rem, 1vw, 0.9rem);
+    color: #555;
+}
+
+.date {
+    font-weight: 600;
+    color: #333 !important;
+}
+
+@media (max-width: 48rem) {
+    .checkout-wrapper {
+        flex-direction: column;
+        padding-inline: clamp(1rem, 5vw, 2rem);
+    }
+
+    .pickup-body {
+        flex-direction: column;
+    }
+
+    .jam {
+        width: 100%;
+        flex-basis: auto;
+    }
+
+    .catatan {
+        width: 100%;
+    }
+
+    .catatan textarea {
+        min-height: clamp(8rem, 30vw, 12rem);
+    }
+
+    .order-card {
+        flex-direction: column;
+        align-items: stretch;
+        gap: clamp(0.75rem, 3vw, 1rem);
+    }
+
+    .card-left {
+        width: 100%;
+    }
+
+    .card-right {
+        width: 100%;
+        align-items: flex-start;
+        text-align: left;
+        padding-top: clamp(0.5rem, 1vw, 0.75rem);
+        border-top: 1px solid #eee;
+    }
+}
+
+@media (max-width: 30rem) {
+    .cart-isi {
+        flex-wrap: wrap;
+    }
+
+    .cart-isi .detail {
+        flex: 1 1 calc(100% - 5rem);
+    }
+
+    .qty {
+        margin-left: auto;
+    }
+
+    .add {
+        width: 100%;
+    }
+
+    .total-price {
+        font-size: clamp(2.25rem, 12vw, 3.5rem);
+    }
+
+    .card-left img {
+        width: clamp(3.5rem, 18vw, 5rem);
+        height: clamp(3.5rem, 18vw, 5rem);
+    }
 }

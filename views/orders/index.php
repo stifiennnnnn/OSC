@@ -66,7 +66,7 @@
         </div>
       </div>
 
-        <img src="../../assets/images/note.png" class="note" alt="note icon">
+        <!-- <img src="../../assets/images/note.png" class="note" alt="note icon"> -->
         <button class="add">+ Add More Items</button>
       </div>
     </div>
