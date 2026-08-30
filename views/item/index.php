@@ -37,7 +37,7 @@
                 </div>
 
                 <div class="menu-item">
-                    <img src="../../assets/images/smackdown.png" alt="ilust makanan3">
+                    <img src="../../assets/images/vendor/2.png" alt="ilust makanan3">
                     <p>Chicken Smackdown</p>
                     <p>Rp 20.000</p>
                     <div class="quantity">
@@ -198,6 +198,7 @@
         const quantity = button.parentElement.querySelector('span');
         let value = parseInt(quantity.textContent);
         quantity.textContent = value + 1;
+        quantity.style.color = 'var(--orange)';
     }
 
     function decreaseQuantity(button) {
@@ -206,6 +207,9 @@
 
         if (value > 0) {
             quantity.textContent = value - 1;
+            if (value - 1 === 0) {
+                quantity.style.color = 'var(--text)';
+            }
         }
     }
   </script>

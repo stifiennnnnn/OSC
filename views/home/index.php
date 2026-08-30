@@ -12,34 +12,22 @@
           <img src="../../assets/images/breakfast food-bro 2.png" alt="ilust makanan" class="breakfast">
       </div>
       <div class="choice">
-          <h1 class="Choose">Choose A Menu!</h1>
-          <div class="selection">
-            <div class="canteen-item">
-              <img src="../../assets/images/siomay.png" alt="makanan">
-              <p class="namatoko">Mr. Komeng's Siomay</p>
-            </div>
-            <div class="canteen-item">
-              <a href="../../views/item/index.php">
-                <button class="menu-button">
-                  <img src="../../assets/images/smackdown.png" alt="makanan">  
-                  <p class="namatoko">Mr. Win's Chicken Smackdown</p>
-                </button>
-              </a>
-            </div>
-            <div class="canteen-item">
-              <img src="../../assets/images/cupcake.png" alt="makanan">
-              <p class="namatoko">Mrs. Momoy's Shop</p>
-            </div>
-            <div class="canteen-item">
-              <img src="../../assets/images/specialfood.png" alt="makanan">
-              <p class="namatoko">Mr. Bobi's Soto Ayam</p>
-            </div>
-            <div class="canteen-item">
-              <img src="../../assets/images/fries.png" alt="makanan">
-              <p class="namatoko">Mrs. Nina's Fries</p>
-            </div>
-          </div>
-        </div>
+        <h1 class="Choose">Choose A Menu!</h1>
+        <div class="selection">
+          <?php
+            $query = "SELECT * FROM vendor";
+            $result = mysqli_query($connection, $query);
+            while ($row = mysqli_fetch_assoc($result)) {
+              echo '<div class="canteen-item">';
+              echo '<a href="../../views/item/index.php?vendor_id=' . $row['vendor_id'] . '">';
+              echo '<button class="menu-button">';
+              echo '<img src="../../assets/images/vendor/' . $row['vendor_id'] . '.png" alt="makanan">';
+              echo '<p class="namatoko">' . $row['vendor_name'] . '</p>';
+              echo '</button>';
+              echo '</a>';
+              echo '</div>';
+            }
+          ?>
       </div>
     </section>
   </main>

@@ -1,3 +1,6 @@
+<?php
+include_once __DIR__ . '/auth.php';
+?>
 <header>
   <link rel="stylesheet" href="/OSC/assets/css/header.css">
   <nav>

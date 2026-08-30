@@ -1,3 +1,15 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
+
+require_once __DIR__ . '/../../config/db.php';
+
+if (isset($_SESSION['uid'])) {
+  header("Location: /OSC/views/home/index.php");
+  exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <?php include '../../includes/head.php'; ?>
@@ -19,7 +31,7 @@
                   <circle cx="12" cy="7" r="4"></circle>
                 </svg>
               </span>
-              <input class="input" id="username" type="text" placeholder="Enter your username" autocomplete="username" />
+              <input class="input" id="username" name="username" type="text" placeholder="Enter your username" autocomplete="username" required />
             </div>
           </div>
 
@@ -32,7 +44,7 @@
                   <path d="m4 7 8 6 8-6"></path>
                 </svg>
               </span>
-              <input class="input" id="email" type="email" placeholder="Enter your email address" autocomplete="email" />
+              <input class="input" id="email" name="email" type="email" placeholder="Enter your email address" autocomplete="email" required />
             </div>
           </div>
 
@@ -46,12 +58,9 @@
                   <circle cx="12" cy="15" r="1"></circle>
                 </svg>
               </span>
-              <input class="input" id="password" type="password" placeholder="Enter your password" autocomplete="current-password" />
+              <input class="input" id="password" name="password" type="password" placeholder="Enter your password" autocomplete="current-password" required />
               <button class="password-toggle" type="button" aria-label="Show password" onclick="togglePassword(this)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"></path>
-                  <circle cx="12" cy="12" r="2.5"></circle>
-                </svg>
+                <svg id="password-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
               </button>
             </div>
           </div>
@@ -66,12 +75,9 @@
                   <circle cx="12" cy="15" r="1"></circle>
                 </svg>
               </span>
-              <input class="input" id="confirm-password" type="password" placeholder="Confirm your password" autocomplete="new-password" />
+              <input class="input" id="confirm-password" name="confirm-password" type="password" placeholder="Confirm your password" autocomplete="new-password" required />
               <button class="password-toggle" type="button" aria-label="Show password" onclick="togglePassword(this)">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
-                  <path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"></path>
-                  <circle cx="12" cy="12" r="2.5"></circle>
-                </svg>
+                <svg id="password-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2.5 12s3.5-5 9.5-5 9.5 5 9.5 5-3.5 5-9.5 5-9.5-5-9.5-5Z"></path><circle cx="12" cy="12" r="2.5"></circle></svg>
               </button>
             </div>
           </div>
@@ -81,7 +87,7 @@
 
         <div class="divider">Or Continue with</div>
 
-        <button class="google-button" type="button">
+        <button onclick="window.location.href='../../controllers/google-login.php'" class="google-button" type="button">
           <svg class="google-icon" viewBox="0 0 24 24" aria-hidden="true">
             <path fill="#4285F4" d="M23.49 12.27c0-.79-.07-1.55-.2-2.27H12v4.3h6.44a5.51 5.51 0 0 1-2.39 3.61v3h3.87c2.27-2.09 3.57-5.17 3.57-8.64Z"/>
             <path fill="#34A853" d="M12 24c3.24 0 5.95-1.07 7.93-2.91l-3.87-3c-1.07.72-2.44 1.15-4.06 1.15-3.13 0-5.78-2.12-6.73-4.96H1.27v3.09A12 12 0 0 0 12 24Z"/>
@@ -102,6 +108,18 @@
       
     </section>
   </main>
+  <script src="../../assets/js/login.js"></script>
+  <script>
+    const passwordInput = document.getElementById('password');
+    const confirmPasswordInput = document.getElementById('confirm-password');
+    confirmPasswordInput.addEventListener('input', () => {
+      if (confirmPasswordInput.value !== passwordInput.value) {
+        confirmPasswordInput.setCustomValidity("Passwords do not match");
+      } else {
+        confirmPasswordInput.setCustomValidity("");
+      }
+    });
+  </script>
   <?php include '../../includes/footer.php'; ?>
 </body>
 </html>

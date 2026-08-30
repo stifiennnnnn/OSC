@@ -6,3 +6,4 @@
   <link rel="stylesheet" href="/OSC/assets/css/fonts.css">
   <link rel="stylesheet" href="/OSC/assets/css/main.css">
 </head>
+<?php require_once __DIR__ . '/../config/db.php'; ?>

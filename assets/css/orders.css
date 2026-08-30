@@ -21,7 +21,7 @@
 .total-box {
     width: 100%;
     box-sizing: border-box;
-    border: clamp(1px, 0.15vw, 2px) solid #ff7017;
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange);
     border-radius: clamp(1rem, 2vw, 1.75rem);
 }
 
@@ -61,7 +61,7 @@
     box-sizing: border-box;
     display: flex;
     align-items: center;
-    border: clamp(1px, 0.15vw, 2px) solid #ff7017;
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange);
     border-radius: clamp(0.75rem, 1.5vw, 1.25rem);
     padding: clamp(0.6rem, 1.2vw, 0.75rem) clamp(0.75rem, 1.5vw, 1.125rem);
     margin-bottom: clamp(0.6rem, 1.2vw, 0.9rem);
@@ -77,7 +77,7 @@
 }
 
 .badge {
-    background-color: #ff5e00;
+    background-color: var(--orange);
     color: white;
     font-size: clamp(0.65rem, 0.8vw, 0.75rem);
     font-weight: bold;
@@ -97,7 +97,7 @@
 }
 
 .detail .price {
-    font-size: clamp(0.8rem, 1vw, 0.9rem);
+    font-size: clamp(1rem, 1vw, 1.2rem);
     font-weight: 500;
     color: #444;
     margin: 0;
@@ -110,7 +110,7 @@
     border: 1px solid #ddd;
     border-radius: 0.5rem;
     padding: 0.25rem clamp(0.5rem, 1vw, 0.65rem);
-    color: #ff7017;
+    color: var(--orange);
     font-weight: 600;
     flex-shrink: 0;
 }
@@ -124,9 +124,9 @@
 
 .add {
     width: min(70%, 25rem);
-    border: clamp(1px, 0.15vw, 2px) solid #ff7017;
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange);
     background: white;
-    color: #ff7017;
+    color: var(--orange);
     padding: clamp(0.7rem, 1.5vw, 0.95rem) clamp(1rem, 3vw, 3.125rem);
     border-radius: clamp(0.5rem, 1vw, 0.75rem);
     font-size: clamp(1rem, 1.5vw, 1.25rem);
@@ -172,6 +172,13 @@
     cursor: pointer;
     text-align: center;
     box-shadow: 0 0.1rem 0.25rem rgba(0, 0, 0, 0.03);
+    transition: all 0.2s ease;
+}
+
+.tgl-btn.active {
+    background-color: var(--orange);
+    color: white;
+    border-color: var(--orange-dark);
 }
 
 .pickup-body {
@@ -201,6 +208,12 @@
     cursor: pointer;
     text-align: center;
     transition: all 0.2s ease;
+}
+
+.jam-btn.active {
+    background-color: var(--orange);
+    color: white;
+    border-color: var(--orange-dark);
 }
 
 .catatan {
@@ -246,7 +259,7 @@
 
 .total-price {
     font-size: clamp(2.75rem, 6vw, 4.5rem);
-    color: #ff5e00;
+    color: var(--orange);
     text-align: center;
     margin: clamp(0.75rem, 1.5vw, 1rem) 0 clamp(1.5rem, 3vw, 2.5rem);
     font-weight: 600;
@@ -256,16 +269,16 @@
 .btn-checkout {
     width: 100%;
     box-sizing: border-box;
-    background-color: #ff914d;
+    background-color: var(--orange);
     color: white;
-    border: clamp(1px, 0.15vw, 2px) solid #ff5e00;
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange-dark);
     padding: clamp(0.8rem, 1.5vw, 1.25rem);
     border-radius: clamp(0.75rem, 1.5vw, 1.25rem);
     font-size: clamp(1rem, 1.5vw, 1.25rem);
     font-weight: 600;
     cursor: pointer;
     margin-top: clamp(0.75rem, 1.5vw, 1.25rem);
-    text-align: left;
+    text-align: center;
 }
 
 .kotak-history {
@@ -293,7 +306,7 @@
     justify-content: space-between;
     gap: clamp(1rem, 3vw, 2rem);
     padding: clamp(0.9rem, 2vw, 1.5rem);
-    border: clamp(1px, 0.15vw, 2px) solid #ff7017;
+    border: clamp(1px, 0.15vw, 2px) solid var(--orange);
     border-radius: clamp(0.9rem, 2vw, 1.5rem);
 }
 

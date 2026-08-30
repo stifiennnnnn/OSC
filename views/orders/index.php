@@ -25,7 +25,7 @@
       </div>
 
       <div class="cart-isi">
-        <img src="../../assets/images/smackdown.png" alt="food">
+        <img src="../../assets/images/vendor/2.png" alt="food">
         <span class="badge">2</span>
         <div class="detail">
             <h3>Nasi Ayam Geprek</h3>
@@ -111,9 +111,40 @@
         <div class="total-box">
           <h2>Total:</h2>
           <h1 class="total-price">Rp. 40.000</h1>
-          <button class="btn-checkout">Proceed To Checkout</button>
+          <button class="btn-checkout" onclick="window.location.href='../../views/payment/index.php'">Proceed to Payment</button>
         </div>
       </div>
     </div>
+    <script>
+      const tglBtns = document.querySelectorAll('.tgl-btn');
+      tglBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          tglBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+
+      const jamBtns = document.querySelectorAll('.jam-btn');
+      jamBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          jamBtns.forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+        });
+      });
+
+      const qtyButtons = document.querySelectorAll('.qty button');
+      qtyButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const qtySpan = button.parentElement.querySelector('span');
+          let qty = parseInt(qtySpan.textContent);
+          if (button.textContent === '+') {
+            qty++;
+          } else if (button.textContent === '-' && qty > 1) {
+            qty--;
+          }
+          qtySpan.textContent = qty;
+        });
+      });
+    </script>
   <?php include '../../includes/footer.php'; ?>
 </body>
